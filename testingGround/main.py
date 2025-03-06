@@ -9,4 +9,4 @@ def get_time(request):
   timestamp = datetime.datetime.now().strftime("%H:%M:%S")
   request_json = request.get_json(silent=True)
   request_args = request.args
-  return (f"The time is now {timestamp}!")
+  return (f"The time is {timestamp}!")
