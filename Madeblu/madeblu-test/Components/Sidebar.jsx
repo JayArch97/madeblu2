@@ -1,15 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faBars } from '@fortawesome/free-solid-svg-icons'; 
-
 import { useContext, createContext, useState } from "react";
 
 const SidebarContext = createContext();
 
-export default function Sidebar({ children }) {
-    const [expanded, setExpanded] = useState(true); 
+export default function Sidebar({ children, expanded, setExpanded }) {
     return (
-        <aside className="h-screen w-[10vw]">
-            <nav className="h-full inline-flex flex-col bg-white border-r shadow-sm">
+        <aside className={`h-screen ${expanded ? "w-64" : "w-16"} transition-all duration-300`}>
+            <nav className="h-full flex flex-col bg-white border-r shadow-sm">
                 <div className="p-4 pb-2 flex justify-between items-center">
                     <img
                         src="https://img.logoipsum.com/243.svg"
@@ -34,12 +32,7 @@ export default function Sidebar({ children }) {
                         alt=""
                         className="w-10 h-10 rounded-md"
                     />
-                    <div
-                        className={`
-                            flex justify-between items-center
-                            overflow-hidden transition-all ${expanded ? "w-52 ml-3" : "w-0"}
-                        `}
-                    >
+                    <div className={`transition-all overflow-hidden ${expanded ? "w-52 ml-3" : "w-0"}`}>
                         <div className="leading-4">
                             <h4 className="font-semibold">John Doe</h4>
                             <span className="text-xs text-gray-600">johndoe@gmail.com</span>
@@ -51,7 +44,8 @@ export default function Sidebar({ children }) {
     );
 }
 
-export function SidebarItem({ icon, text, active, alert }) {
+
+export function SidebarItem({ icon, text = "Home", active, alert }) {
     const { expanded } = useContext(SidebarContext);
 
     return (
@@ -67,30 +61,10 @@ export function SidebarItem({ icon, text, active, alert }) {
                 }
             `}
         >
-            {icon}
-            <span
-                className={`overflow-hidden transition-all ${expanded ? "w-52 ml-3" : "w-0"}`}
-            >
+            <span className="w-5">{icon}</span>
+            <span className={`overflow-hidden transition-all ${expanded ? "w-52 ml-3" : "w-0"}`}>
                 {text}
             </span>
-            {alert && (
-                <div
-                    className={`absolute right-2 w-2 h-2 rounded bg-indigo-400 ${expanded ? "" : "top-2"}`}
-                />
-            )}
-
-            {!expanded && (
-                <div
-                    className={`
-                        absolute left-full rounded-md px-2 py-1 ml-6
-                        bg-indigo-100 text-indigo-800 text-sm
-                        invisible opacity-20 -translate-x-3 transition-all
-                        group-hover:visible group-hover:opacity-100 group-hover:translate-x-0
-                    `}
-                >
-                    {text}
-                </div>
-            )}
         </li>
     );
 }
