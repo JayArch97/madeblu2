@@ -1,5 +1,7 @@
 import ProfileCard from "./ProfileCard";
 import { useState } from "react";
+import { faPencil } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Placeholder components for other cards
 function PayrollCard() {
@@ -38,11 +40,10 @@ export default function Cards() {
     return (
         <>
         <div className="flex h-screen">
-            <div className="w-20" /> 
-            
-            <div className="flex flex-col flex-1">
-            <h2 className="text-2xl font-bold ml-4 mt-2">Employee Profile</h2>
-                <div className="flex space-x-4 p-4 border-b bg-white rounded-sm">
+            <div className="w-20" />   
+             <div className="flex flex-col flex-1">
+                 <h2 className="text-2xl font-bold ml-4 mt-2">Employee Profile</h2>
+                     <div className="flex space-x-4 p-4 border-b bg-white rounded-sm">
                     {sections.map((section, index) => (
                         <button
                             key={index}
@@ -59,9 +60,12 @@ export default function Cards() {
                 </div>
 
                 <div className="flex flex-1 overflow-auto p-4 bg-gray-50">
-    {sections[activeSection].component}
+                {sections[activeSection].component}
 
-                <div className="ml-20 w-[40vw] min-w-[300px] h-[40vh] border-2 border-gray-200 bg-white p-6 rounded-md shadow-sm">
+                <div className="h-[100vh] grid-col-2 grid-rows-2">
+                <div className="ml-20 w-[40vw] min-w-[300px] h-[40vh] border-2 border-gray-200 bg-white p-6 rounded-md shadow-sm relative">
+                <p className="absolute top-5 right-0 size-16  ">{<FontAwesomeIcon icon={faPencil} />} </p>
+
                     <h2 className="text-2xl mb-6">Basic Information</h2>
 
                     <div className="space-y-4">
@@ -84,8 +88,31 @@ export default function Cards() {
                             <p className="text-gray-600">Employee ID</p>
                             <p className="font-medium">5634</p>
                         </div>
+
                     </div>  
-                    <div className=" self-start mt-25 h-[40vh] w-[20vw] min-w-[300px] border-2 border-gray-200 bg-white p-6 rounded-md shadow-sm">
+                    </div>
+                    <div className="self-start ml-20 mt-5 h-[60vh] w-[40vw] min-w-[300px] border-2 border-gray-200 bg-white p-6 rounded-md shadow-sm relative">
+                    <p className="absolute top-5 right-0 size-16  ">  {<FontAwesomeIcon icon={faPencil} />}  </p>
+                    <h2 className="text-2xl mb-6">Personal Information</h2>
+
+                        <div className="space-y-4">
+                            <div className="flex justify-between">
+                                <p className="text-gray-600">Legal First Name</p>
+                                <p className="font-medium">Johnathan</p>
+                            </div>
+
+                            <div className="flex justify-between">
+                                <p className="text-gray-600"> Legal Last Name</p>
+                                <p className="font-medium">Doeber</p>
+                            </div>
+
+                            <div className="flex justify-between">
+                                <p className="text-gray-600">Phone Number</p>
+                                <p className="font-medium">415-564-4374</p>
+                            </div>
+
+                            </div>
+                        
                     </div>
                 </div>
                 

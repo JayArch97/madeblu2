@@ -1,4 +1,4 @@
-    import stockProfileImage from '../src/assets/profile.jpeg'
+import stockProfileImage from '../src/assets/profile.jpeg'
 
     export default function ProfileCard() {
       return (
@@ -8,7 +8,7 @@
                     src={stockProfileImage}
                     alt="Profile"
                 />
-                <h2 className="font-bold text-2xl mt-4">John Doe</h2>
+                <h2 className="font-bold text-2xl ">John Doe</h2>
                 <h3 className="text-lg font-medium text-gray-600 mb-2 mt-2">Brand Designer</h3>
                 <hr/>
                 <p className='text-gray-600 text-left self-start mt-5'>Status</p>

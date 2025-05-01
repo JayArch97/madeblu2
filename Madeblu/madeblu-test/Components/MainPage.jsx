@@ -16,7 +16,7 @@ import { faAddressCard,
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Sidebar, { SidebarItem } from "./Sidebar";
 import Cards from './Cards';
-import Container from './Containers'
+import SecondPage from './SecondPage';
 
 
 export default function EmployeeProfile(){
@@ -24,7 +24,7 @@ export default function EmployeeProfile(){
 
     return(
         <>
-            <div className="flex h-screen">
+            {/* <div className="flex h-screen">
 
             <Sidebar expanded={expanded} setExpanded={setExpanded}>
             <SidebarItem icon={<FontAwesomeIcon icon={faHome} />} text="Home" />
@@ -49,8 +49,8 @@ export default function EmployeeProfile(){
 
             </Sidebar>
             <Cards/>
-            <Container/>
-            </div>
+            </div> */}
+            <SecondPage />
         </>
     )
 }

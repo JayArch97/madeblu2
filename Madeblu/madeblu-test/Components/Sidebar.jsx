@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faBars } from '@fortawesome/free-solid-svg-icons'; 
-import { useContext, createContext, useState } from "react";
+import { useContext, createContext } from "react";
 
 const SidebarContext = createContext();
 
@@ -45,7 +45,7 @@ export default function Sidebar({ children, expanded, setExpanded }) {
 }
 
 
-export function SidebarItem({ icon, text = "Home", active, alert }) {
+export function SidebarItem({ icon, text = "Home", active }) {
     const { expanded } = useContext(SidebarContext);
 
     return (
