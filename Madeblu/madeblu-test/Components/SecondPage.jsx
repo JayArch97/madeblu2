@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faUser} from '@fortawesome/free-solid-svg-icons'
+import {faUser, faHome} from '@fortawesome/free-solid-svg-icons'
 
 function Tab1() {
     return <div className="p-4"></div>;
@@ -90,9 +90,14 @@ export default function SecondPage(){
                       </div>    
                       </div>
                       <div className="flex items-center justify-center">
-                      <p className="mr-10 ">{<FontAwesomeIcon icon={faUser} />} </p>
+                      <div>
+                      <p className="ml-4  mr-8">{<FontAwesomeIcon icon={faUser} />} </p>
+                      <p className="ml-2 mt-2 ">User</p>
+                      <p className="ml-1 ">Profile</p>
 
+                       </div>
                       <div className="flex space-x-4 p-4 bg-white w-full border-gray-300 border-1 rounded-full mt-4">
+                        
                         {sections.map((section, index) => (
                             <button
                                 key={index}
@@ -109,7 +114,11 @@ export default function SecondPage(){
                       </div>  
                       </div>  
 
-                      <div className="flex space-x-4 p-4  bg-gray-100  border-gray-300 border-1 rounded-full mt-4">
+                      <div className="flex items-center justify-center">
+                      <div>
+                      <p className="ml-4  mr-8">{<FontAwesomeIcon icon={faHome} />} </p>
+                      </div>
+                        
                         {sections.map((section, index) => (
                             <button
                                 key={index}
@@ -124,6 +133,33 @@ export default function SecondPage(){
                             </button>
                         ))}
                       </div>  
+                      <div className="flex">
+                      <p className="text-lg border-1 ml-2 rounded-full px-2 py-2 mt-4 mb-2 mr-10">{<FontAwesomeIcon icon={faHome} />} </p>
+                       <select className="border-1 mt-2 w-[10vw] px-2 py-2">
+                        <option value="someOption">Dropdown</option>
+                        <option value="otherOption">Other option</option>
+                        </select>
+                      <div>
+                      </div>
+                      </div>
+                      <div className="flex">
+                      <p className="text-lg border-1 ml-2 rounded-full px-2 py-2 mt-4 mb-2 mr-10">{<FontAwesomeIcon icon={faHome} />} </p>
+                       <select className="border-1 mt-2 w-[10vw] px-2 py-2">
+                        <option value="someOption">Dropdown</option>
+                        <option value="otherOption">Other option</option>
+                        </select>
+                        <div>
+                      </div>
+                      </div>
+                      <div className="flex">
+                      <p className="text-lg border-1 ml-2 rounded-full px-2 py-2 mt-4 mb-2 mr-10">{<FontAwesomeIcon icon={faHome} />} </p>
+                       <select className="border-1 mt-2 w-[10vw] px-2 py-2">
+                        <option value="someOption">Dropdown</option>
+                        <option value="otherOption">Other option</option>
+                        </select>
+                        <div>
+                      </div>
+                      </div>
                       </div>  
                     </div>
                     </div>
