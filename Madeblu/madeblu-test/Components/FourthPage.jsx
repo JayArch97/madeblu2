@@ -22,9 +22,9 @@ export default function FourthPage() {
   return (
     <>
     <div className="h-full w-full flex items-center justify-center">
-    <div className="items-center justify-center bg-[#e0e7ff]">
+    <div className="items-center justify-center bg-white">
       <div className="perspective-1000">
-        <div className="rotate-x-25  md:w-[60vw] h-[15vh] bg-black text-white rounded-3xl flex items-center justify-around px-6">
+        <div className="rotate-x-40  md:w-[60vw] h-[15vh] bg-black text-white rounded-3xl flex items-center justify-around px-6">
           {navItems.map((item) => (
             <NavItem
               key={item.label}
@@ -37,7 +37,20 @@ export default function FourthPage() {
         </div>
       </div>
         <div className="perspective-1000">
-          <div className="rotate-x-25  md:w-[60vw] h-[15vh] bg-white text-black rounded-3xl flex items-center justify-around px-6">
+          <div className="rotate-x-40  md:w-[60vw] h-[15vh] bg-gray-100 text-black rounded-3xl flex items-center justify-around px-6">
+            {navItems.map((item) => (
+              <NavItem
+                key={item.label}
+                icon={item.icon}
+                label={item.label}
+                active={activeTab === item.label}
+                onClick={() => setActiveTab(item.label)}
+              />
+            ))}
+          </div>
+      </div>
+      <div className="perspective-1000">
+          <div className="rotate-x-40  md:w-[60vw] h-[15vh] bg-black text-white rounded-3xl flex items-center justify-around px-6">
             {navItems.map((item) => (
               <NavItem
                 key={item.label}
