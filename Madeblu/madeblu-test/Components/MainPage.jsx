@@ -17,6 +17,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Sidebar, { SidebarItem } from "./Sidebar";
 import Cards from './Cards';
 import SecondPage from './SecondPage';
+import ThirdPage from './ThirdPage';
 
 
 export default function EmployeeProfile(){
@@ -50,7 +51,8 @@ export default function EmployeeProfile(){
             </Sidebar>
             <Cards/>
             </div> */}
-            <SecondPage />
+            {/* <SecondPage /> */}
+            <ThirdPage/>
         </>
     )
 }

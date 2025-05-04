@@ -22,7 +22,6 @@ export default function SecondPage() {
   const [row1, setRow1] = useState(0);
   const [row2, setRow2] = useState(0);
   const [row3, setRow3] = useState(0);
-  const [row4, setRow4] = useState(0);
 
   return (
     <div className="container mx-auto">
