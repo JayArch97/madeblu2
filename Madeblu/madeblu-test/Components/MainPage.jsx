@@ -18,6 +18,7 @@ import Sidebar, { SidebarItem } from "./Sidebar";
 import Cards from './Cards';
 import SecondPage from './SecondPage';
 import ThirdPage from './ThirdPage';
+import FourthPage from './FourthPage'
 
 
 export default function EmployeeProfile(){
@@ -52,7 +53,8 @@ export default function EmployeeProfile(){
             <Cards/>
             </div> */}
             {/* <SecondPage /> */}
-            <ThirdPage/>
+            {/* <ThirdPage/> */}
+            <FourthPage/>
         </>
     )
 }
