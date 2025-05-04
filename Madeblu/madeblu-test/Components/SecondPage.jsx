@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faHome, faEnvelope, faGear, faList, faLiraSign} from '@fortawesome/free-solid-svg-icons';
 
 function Tab1() {
   return <div className="p-4">Tab 1 content</div>;
@@ -29,14 +29,15 @@ export default function SecondPage() {
       <div className="flex h-screen">
         <div className="w-20" />
 
-        <div className="flex flex-col flex-1">
+        <div className="flex">
+
           <div className="flex flex-1 overflow-auto p-4 bg-gray-50">
             {sections[row1].component}
 
             <div className="h-[100vh] grid-cols-2 grid-rows-2">
               <div className="ml-20 w-[40vw] min-w-[300px] h-[80vh] border-2 border-gray-200 bg-white p-6 rounded-md shadow-sm relative">
-                <p className="absolute top-5 right-0 size-16" />
-
+               <div className="flex">
+                <div className=" w-4/5 mr-10">
                 <div className="flex space-x-4 p-4 border-b bg-white rounded-sm">
                   {sections.map((section, index) => (
                     <button
@@ -118,8 +119,21 @@ export default function SecondPage() {
                     ))}
                   </div>
                 </div>
+                </div>
+                <div className="mt-8 h-4/5 border-4 border-gray-200 px-2 py-2 border-t-0 border-b-0 flex flex-col items-center justify-center">
+                <FontAwesomeIcon className="text-2xl mb-2 mt-4 text-gray-400" icon={faList} />
+                <hr/>
+                <FontAwesomeIcon className="text-2xl mb-2 mt-4 text-gray-400" icon={faUser} />
+                <hr/>
+                <FontAwesomeIcon className="text-2xl mb-2 mt-4 text-gray-400" icon={faHome} />
+                <hr/>
+                <FontAwesomeIcon className="text-2xl mb-2 mt-4 text-gray-400" icon={faEnvelope} />
+                <hr/>
+                <FontAwesomeIcon className="text-2xl mt-4 text-gray-400" icon={faGear} />
 
-                {/* DROPDOWNS + SIDE CONTAINER */}
+                </div>
+                </div>
+
                 <div className="flex gap-4 mt-4">
                   {/* Dropdowns container */}
                   <div className="flex flex-col gap-4">
@@ -142,13 +156,13 @@ export default function SecondPage() {
                         </select>
                       </div>
                     ))}
+
                   </div>
 
-                  {/* Side container */}
                   <div className="w-[20vw] min-w-[200px] h-[25vh] bg-blue-100 border border-gray-300 rounded-md p-4 shadow-sm">
                     <select className="text-lg font-semibold mb-2 w-full border-1 px-2 py-2">
                     <option className="text-gray-700 text-sm">
-                      Add 
+                      Add Something
                     </option>
                     </select>
                   </div>
