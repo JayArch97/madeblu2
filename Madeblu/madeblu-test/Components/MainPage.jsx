@@ -19,7 +19,8 @@ import Cards from './Cards';
 import SecondPage from './SecondPage';
 import ThirdPage from './ThirdPage';
 import FourthPage from './FourthPage'
-
+import FifthPage from './FifthPage';
+import SixthPage from './SixthPage';
 
 export default function EmployeeProfile(){
     const [expanded, setExpanded] = useState(true);
@@ -54,7 +55,8 @@ export default function EmployeeProfile(){
             </div> */}
             {/* <SecondPage /> */}
             {/* <ThirdPage/> */}
-            <FourthPage/>
+            {/* <FourthPage/> */}
+            <SixthPage/>
         </>
     )
 }
